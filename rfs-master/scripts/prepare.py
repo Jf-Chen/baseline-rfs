@@ -16,9 +16,30 @@ try :
 except :
     args = parser.parse_args()
     
+if not os.path.exists(args.tar_to_floder):
+    print("args.tar_to_floder not exist,now create")
+    os.makedirs(args.tar_to_floder) 
 
 shutil.unpack_archive(args.tar_from_path, args.tar_to_floder,args.tar_type)
 
+# 创建其他文件夹
+model_path="./model_path"
+if not os.path.exists(model_path):
+    print("./model_path not exist,now create")
+    os.makedirs(model_path) 
+
+tensorboard_logger="./tb_path"
+if not os.path.exists(model_path):
+    print("./tb_path not exist,now create")
+    os.makedirs(tensorboard_logger) 
+    
+data_root="./data_root"
+if not os.path.exists(model_path):
+    print("./data_root not exist,now create")
+    os.makedirs(data_root) 
+    
+
+    
 
 
 
