@@ -3,7 +3,7 @@
 # ======================
 
 # supervised pre-training
-!python train_supervised.py --trial pretrain --model_path ./model_path --tb_path ./tb_path --data_root ./data_root
+python train_supervised.py --trial pretrain --model_path ./model_path --tb_path ./tb_path --data_root ./data_root --num_workers 2
 
 # distillation
 # setting '-a 1.0' should give simimlar performance
