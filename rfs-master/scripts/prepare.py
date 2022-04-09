@@ -19,7 +19,13 @@ try :
     args = parser.parse_args(args=[])
 except :
     args = parser.parse_args()
-    
+
+# 如果使用教师网络
+if args.use_teacher:
+    shutil.unpack_archive(args.teacher_from ,args.teacher_type) #默认解压到当前目录
+
+# 下载数据集
+
 if not os.path.exists(args.tar_to_floder):
     print("args.tar_to_floder not exist,now create")
     os.makedirs(args.tar_to_floder) 
@@ -42,9 +48,7 @@ if not os.path.exists(model_path):
     print("./data_root not exist,now create")
     os.makedirs(data_root) 
     
-# 如果使用教师网络
-if parser.use_teacher:
-    shutil.unpack_archive(args.teacher_from ,args.teacher_type) #默认解压到当前目录
+
 
 
 
