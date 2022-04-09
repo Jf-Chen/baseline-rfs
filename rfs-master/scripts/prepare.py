@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(description="prepare datasets", formatter_class
 parser.add_argument("--tar_from_path", type=str, default="/content/drive/MyDrive/rfs/miniImageNet.tar.gz", help="提取路径")
 parser.add_argument("--tar_to_floder", type=str, default="", help="解压位置")
 parser.add_argument("--tar_type", type=str, default="tar", help="文件类型")
-parser.add_argument("--use_teacher", type=boolean, default=False, help="使用已经训练好的CE")
+parser.add_argument("--use_teacher", action='store_true',  help="使用已经训练好的CE") # action='store_true',默认false
 parser.add_argument("--teacher_from", type=str, default="/content/drive/MyDrive/rfs/teacher.tar", help="教师网络在teacher中的路径")
 parser.add_argument("--teacher_to", type=str, default="/content/baseline-rfs/rfs-master", help="解压路径")
 parser.add_argument("--teacher_type", type=str, default="tar", help="文件类型")
