@@ -43,7 +43,7 @@ if not os.path.exists(model_path):
     os.makedirs(data_root) 
     
 # 如果使用教师网络
-if parse_args.use_teacher:
+if parser.use_teacher:
     shutil.unpack_archive(args.teacher_from ,args.teacher_type) #默认解压到当前目录
 
 
