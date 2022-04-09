@@ -22,6 +22,7 @@ except :
 
 # 如果使用教师网络
 if args.use_teacher:
+    print("download pre-train teacher")
     shutil.unpack_archive(args.teacher_from ,args.teacher_type) #默认解压到当前目录
 
 # 下载数据集
