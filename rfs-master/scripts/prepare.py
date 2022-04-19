@@ -24,7 +24,10 @@ except :
 if args.use_teacher:
     print("download pre-train teacher")
     shutil.unpack_archive(args.teacher_from ,"./",format=args.teacher_type) #默认解压到当前目录
-
+    # 解压出来是/content/baseline-rfs/rfs-master/model_path/resnet12_miniImageNet_lr_0.05_decay_0.0005_trans_A_trial_pretrain，太长了
+    os.rename("./model_path/resnet12_miniImageNet_lr_0.05_decay_0.0005_trans_A_trial_pretrain","./model_path/teacher")
+    
+    
 # 下载数据集
 
 if not os.path.exists(args.tar_to_floder):
