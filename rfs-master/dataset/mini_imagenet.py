@@ -6,6 +6,7 @@ import torch
 from torch.utils.data import Dataset
 import torchvision.transforms as transforms
 
+# data_root,partition,data_aug,mean,std,pretrain,transform
 
 class ImageNet(Dataset):
     def __init__(self, args, partition='train', pretrain=True, is_sample=False, k=4096,
@@ -18,6 +19,7 @@ class ImageNet(Dataset):
         self.std = [70.68188272 / 255.0, 68.27635443 / 255.0, 72.54505529 / 255.0]
         self.normalize = transforms.Normalize(mean=self.mean, std=self.std)
         self.pretrain = pretrain
+
 
         if transform is None:
             if self.partition == 'train' and self.data_aug:
